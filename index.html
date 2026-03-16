@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FC Barcelona Fan Page</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">FCB</a>
+      <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#squad">스쿼드</a></li>
+        <li><a href="#results">경기 결과</a></li>
+        <li><a href="#history">역사</a></li>
+        <li><a href="#stats">클럽 기록</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">FOUNDED 1899 · BARCELONA, SPAIN</p>
+      <h1 class="hero-title">FC<br /><span>BARCELONA</span></h1>
+      <p class="hero-subtitle">Més que un club</p>
+      <div class="hero-cta">
+        <a href="#squad" class="btn btn-primary">스쿼드 보기</a>
+        <a href="#results" class="btn btn-outline">경기 결과</a>
+      </div>
+    </div>
+    <div class="hero-badge" aria-hidden="true">
+      <svg viewBox="0 0 200 200" class="badge-svg">
+        <circle cx="100" cy="100" r="90" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+        <circle cx="100" cy="100" r="70" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+        <text x="100" y="120" text-anchor="middle" class="badge-number">FCB</text>
+      </svg>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span>SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== CLUB INFO ===== -->
+  <section class="section club-info" id="club-info">
+    <div class="container">
+      <div class="info-grid">
+        <div class="info-item" data-aos>
+          <div class="info-icon">🏟️</div>
+          <div class="info-value">99,354</div>
+          <div class="info-label">올림픽 스타디움 수용 인원</div>
+        </div>
+        <div class="info-item" data-aos>
+          <div class="info-icon">🏆</div>
+          <div class="info-value">27</div>
+          <div class="info-label">라리가 우승</div>
+        </div>
+        <div class="info-item" data-aos>
+          <div class="info-icon">⭐</div>
+          <div class="info-value">5</div>
+          <div class="info-label">UEFA 챔피언스리그 우승</div>
+        </div>
+        <div class="info-item" data-aos>
+          <div class="info-icon">📅</div>
+          <div class="info-value">1899</div>
+          <div class="info-label">창단 연도</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SQUAD ===== -->
+  <section class="section squad" id="squad">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">2025–26 SQUAD</span>
+        <h2 class="section-title">스쿼드</h2>
+        <p class="section-desc">드래그하거나 화살표로 선수단 전체를 확인하세요</p>
+      </div>
+
+      <!-- 포지션 필터 -->
+      <div class="squad-filter">
+        <button class="squad-filter-btn active" data-pos="all">전체</button>
+        <button class="squad-filter-btn" data-pos="GK">GK</button>
+        <button class="squad-filter-btn" data-pos="DEF">수비</button>
+        <button class="squad-filter-btn" data-pos="MID">미드필드</button>
+        <button class="squad-filter-btn" data-pos="FW">공격</button>
+      </div>
+
+      <!-- 캐러셀 -->
+      <div class="carousel-wrapper">
+        <button class="carousel-arrow carousel-arrow--prev" id="carouselPrev" aria-label="이전">&#8592;</button>
+        <div class="carousel-track" id="carouselTrack">
+          <!-- script.js에서 렌더링 -->
+        </div>
+        <button class="carousel-arrow carousel-arrow--next" id="carouselNext" aria-label="다음">&#8594;</button>
+      </div>
+
+      <!-- 스크롤 진행바 -->
+      <div class="carousel-progress">
+        <div class="carousel-progress-bar" id="carouselProgress"></div>
+      </div>
+      <p class="carousel-hint" id="carouselHint">← 드래그하여 탐색 →</p>
+
+    </div>
+  </section>
+
+  <!-- ===== RESULTS ===== -->
+  <section class="section results" id="results">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">RECENT MATCHES</span>
+        <h2 class="section-title">최근 경기</h2>
+        <p class="section-desc">2024–25 시즌 주요 경기 결과</p>
+      </div>
+
+      <div class="results-list" id="resultsList">
+        <!-- script.js에서 렌더링 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HISTORY ===== -->
+  <section class="section history" id="history">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">CLUB HISTORY</span>
+        <h2 class="section-title">클럽의 역사</h2>
+        <p class="section-desc">1899년 창단부터 현재까지, FC 바르셀로나의 발자취</p>
+      </div>
+      <div class="timeline" id="timeline">
+        <!-- script.js에서 렌더링 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <section class="section stats-section" id="stats">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">CLUB RECORDS</span>
+        <h2 class="section-title">클럽 기록</h2>
+        <p class="section-desc">FC 바르셀로나의 역사적인 수치들</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-item" data-aos>
+          <div class="stat-number" data-target="27">0</div>
+          <div class="stat-label">라리가 우승</div>
+        </div>
+        <div class="stat-item" data-aos>
+          <div class="stat-number" data-target="5">0</div>
+          <div class="stat-label">UEFA 챔피언스리그</div>
+        </div>
+        <div class="stat-item" data-aos>
+          <div class="stat-number" data-target="31">0</div>
+          <div class="stat-label">코파 델 레이</div>
+        </div>
+        <div class="stat-item" data-aos>
+          <div class="stat-number" data-target="125">0</div>
+          <div class="stat-label">클럽 역사 (년)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-logo">FC BARCELONA</p>
+      <p class="footer-copy">Més que un club — 1899</p>
+    </div>
+  </footer>
+
+  <!-- ===== PLAYER MODAL ===== -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modalClose" aria-label="닫기">✕</button>
+      <div class="modal-inner" id="modalInner">
+        <!-- script.js에서 렌더링 -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
