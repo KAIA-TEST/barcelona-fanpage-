@@ -6,32 +6,32 @@
 const squadData = [
   // ── GOALKEEPER ──────────────────────────────
   {
-    num: 1, posGroup: 'GK', pos: 'GK',
-    name: '이냐키 페냐', nat: '🇪🇸 Spain', age: 26,
-    height: '188cm', foot: '오른발', born: '1999.03.02',
-    bio: '2024–25 시즌 주전으로 확정된 뒤 꾸준한 활약을 이어가고 있다. 발밑 기술이 좋아 바르샤의 빌드업에 적극 참여하며, 큰 경기에서도 흔들림 없는 모습을 보여준다.',
-    stat1: { val: '71%', lbl: '선방률' }, stat2: { val: '26세', lbl: '나이' },
+    num: 13, posGroup: 'GK', pos: 'GK',
+    name: '호안 가르시아', nat: '🇪🇸 Spain', age: 24,
+    height: '189cm', foot: '오른발', born: '2001.02.25',
+    bio: '에스파뇰 유스 출신으로 2025년 여름 바르셀로나에 합류한 새 주전 골키퍼. 빠른 반응 속도와 안정적인 포지셔닝이 강점이며, 발밑 기술도 뛰어나 플리크 감독의 빌드업 전술에 적합하다.',
+    stat1: { val: '74%', lbl: '선방률' }, stat2: { val: '24세', lbl: '나이' },
     seasonStats: [
-      { lbl: '출장', val: 28, max: 38 },
-      { lbl: '클린시트', val: 11, max: 20 },
-      { lbl: '선방률', val: 71, max: 100 }
+      { lbl: '출장', val: 25, max: 38 },
+      { lbl: '클린시트', val: 10, max: 20 },
+      { lbl: '선방률', val: 74, max: 100 }
     ],
     career: [
-      { club: 'FC 바르셀로나', years: '2023–현재' },
-      { club: 'Getafe CF (임대)', years: '2022–23' },
-      { club: 'Galatasaray (임대)', years: '2020–21' }
+      { club: 'FC 바르셀로나', years: '2025–현재' },
+      { club: 'RCD Espanyol', years: '2022–25' },
+      { club: 'RCD Espanyol B', years: '2019–22' }
     ],
-    awards: ['La Liga 우승 2024–25', '스페인 국가대표']
+    awards: ['스페인 국가대표', '시장가치 3,000만 €']
   },
   {
     num: 25, posGroup: 'GK', pos: 'GK',
     name: '보이치에흐 슈체스니', nat: '🇵🇱 Poland', age: 35,
     height: '195cm', foot: '오른발', born: '1990.04.18',
-    bio: '유벤투스에서 은퇴를 선언했으나 바르셀로나의 긴급 요청을 받아들여 복귀했다. 20년 가까운 커리어에서 쌓은 경험과 침착함으로 팀에 큰 안정감을 더한다.',
+    bio: '유벤투스에서 은퇴를 선언했으나 바르셀로나의 긴급 요청으로 2024년 복귀. 20년 가까운 커리어에서 쌓은 경험과 침착함으로 팀의 든든한 백업 역할을 수행하고 있다.',
     stat1: { val: '68%', lbl: '선방률' }, stat2: { val: '백업', lbl: '롤' },
     seasonStats: [
-      { lbl: '출장', val: 10, max: 38 },
-      { lbl: '클린시트', val: 4, max: 20 },
+      { lbl: '출장', val: 13, max: 38 },
+      { lbl: '클린시트', val: 5, max: 20 },
       { lbl: '선방률', val: 68, max: 100 }
     ],
     career: [
@@ -45,13 +45,13 @@ const squadData = [
   // ── DEFENDER ────────────────────────────────
   {
     num: 23, posGroup: 'DEF', pos: 'RB',
-    name: '줄스 쿤데', nat: '🇫🇷 France', age: 26,
-    height: '178cm', foot: '오른발', born: '1999.11.12',
-    bio: '오른쪽 풀백과 센터백 양쪽을 소화하는 만능 수비수. 공격 가담 시의 스피드와 드리블이 팀의 우측 침투를 이끌며, 1대1 상황에서도 안정적인 모습을 보인다.',
-    stat1: { val: '4', lbl: '시즌 어시스트' }, stat2: { val: '2.1', lbl: '경기당 태클' },
+    name: '줄스 쿤데', nat: '🇫🇷 France', age: 27,
+    height: '178cm', foot: '오른발', born: '1998.11.12',
+    bio: '오른쪽 풀백과 센터백 양쪽을 소화하는 만능 수비수. 공격 가담 시의 스피드와 드리블이 팀의 우측 침투를 이끌며, 1대1 상황에서도 안정적인 모습을 보인다. 계약 2030년까지.',
+    stat1: { val: '5', lbl: '시즌 어시스트' }, stat2: { val: '6,500만 €', lbl: '시장가치' },
     seasonStats: [
       { lbl: '출장', val: 30, max: 38 },
-      { lbl: '어시스트', val: 4, max: 15 },
+      { lbl: '어시스트', val: 5, max: 15 },
       { lbl: '태클 성공', val: 72, max: 100 }
     ],
     career: [
@@ -59,33 +59,52 @@ const squadData = [
       { club: 'Sevilla FC', years: '2019–22' },
       { club: 'Girondins Bordeaux', years: '2016–19' }
     ],
-    awards: ['UEFA 네이션스리그 우승 2021', '프랑스 국가대표', 'La Liga 우승 2022–23']
+    awards: ['UEFA 네이션스리그 우승 2021', '프랑스 국가대표', 'La Liga 우승 2022–23 / 2024–25']
   },
   {
-    num: 2, posGroup: 'DEF', pos: 'CB',
-    name: '파우 쿠바르시', nat: '🇪🇸 Spain', age: 18,
-    height: '187cm', foot: '왼발', born: '2007.01.22',
-    bio: '2005년생. 17세에 UCL 무대를 정복한 차세대 센터백. 뛰어난 공중볼 장악과 침착한 빌드업이 인상적이며, 큰 경기에서 오히려 더 빛나는 강심장 수비수다.',
-    stat1: { val: '92%', lbl: '패스 성공률' }, stat2: { val: '18세', lbl: '나이' },
+    num: 2, posGroup: 'DEF', pos: 'RB',
+    name: '주앙 칸셀로', nat: '🇵🇹 Portugal', age: 31,
+    height: '182cm', foot: '왼발', born: '1994.05.27',
+    bio: '맨시티·바이에른을 거친 세계 최고 수준의 공격형 풀백. 좌우 모두 소화 가능하며 화려한 드리블과 날카로운 크로스가 특기. 2025–26 시즌 바르셀로나에 합류했다.',
+    stat1: { val: '7', lbl: '시즌 공격 포인트' }, stat2: { val: '1,000만 €', lbl: '시장가치' },
     seasonStats: [
-      { lbl: '출장', val: 32, max: 38 },
+      { lbl: '출장', val: 22, max: 38 },
+      { lbl: '어시스트', val: 4, max: 15 },
+      { lbl: '드리블 성공', val: 75, max: 100 }
+    ],
+    career: [
+      { club: 'FC 바르셀로나', years: '2025–현재' },
+      { club: 'Al-Hilal', years: '2024–25' },
+      { club: 'Manchester City', years: '2021–24' },
+      { club: 'Juventus FC', years: '2019–21' }
+    ],
+    awards: ['프리미어리그 우승 4회', 'UCL 우승 2023', '포르투갈 국가대표', 'UEFA 올해의 팀 2021']
+  },
+  {
+    num: 5, posGroup: 'DEF', pos: 'CB',
+    name: '파우 쿠바르시', nat: '🇪🇸 Spain', age: 19,
+    height: '187cm', foot: '왼발', born: '2007.01.22',
+    bio: '2007년생. 17세에 UCL 무대를 정복한 차세대 센터백. 뛰어난 공중볼 장악과 침착한 빌드업이 인상적이며, 큰 경기에서 오히려 더 빛나는 강심장 수비수다. 8,000만 € 시장가치.',
+    stat1: { val: '92%', lbl: '패스 성공률' }, stat2: { val: '8,000만 €', lbl: '시장가치' },
+    seasonStats: [
+      { lbl: '출장', val: 34, max: 38 },
       { lbl: '패스 성공률', val: 92, max: 100 },
-      { lbl: '공중볼 승리', val: 74, max: 100 }
+      { lbl: '공중볼 승리', val: 76, max: 100 }
     ],
     career: [
       { club: 'FC 바르셀로나', years: '2024–현재' },
       { club: 'FC 바르셀로나 B', years: '2022–24' }
     ],
-    awards: ['UCL 8강 진출 2023–24', '스페인 U21 국가대표', 'La Liga 올해의 신인']
+    awards: ['UCL 8강 진출 2023–24', '스페인 국가대표', 'La Liga 우승 2024–25', 'La Liga 최우수 신인']
   },
   {
     num: 4, posGroup: 'DEF', pos: 'CB',
-    name: '로날드 아라우호', nat: '🇺🇾 Uruguay', age: 26,
+    name: '로날드 아라우호', nat: '🇺🇾 Uruguay', age: 27,
     height: '188cm', foot: '오른발', born: '1999.03.07',
-    bio: '압도적인 피지컬과 공격적인 수비 스타일을 지닌 센터백. 1대1 수비에서 리그 최고 수준을 자랑하며 팀의 수비 리더 역할을 한다. 속도와 강인함을 모두 갖춘 현대적 수비수.',
-    stat1: { val: '82%', lbl: '공중볼 승리' }, stat2: { val: '3.4', lbl: '경기당 클리어' },
+    bio: '압도적인 피지컬과 공격적인 수비 스타일의 센터백. 1대1 수비에서 리그 최고 수준을 자랑하며 팀의 수비 리더 역할을 한다. 계약 2031년까지 연장.',
+    stat1: { val: '82%', lbl: '공중볼 승리' }, stat2: { val: '2,500만 €', lbl: '시장가치' },
     seasonStats: [
-      { lbl: '출장', val: 27, max: 38 },
+      { lbl: '출장', val: 26, max: 38 },
       { lbl: '공중볼 승리', val: 82, max: 100 },
       { lbl: '1대1 수비', val: 79, max: 100 }
     ],
@@ -93,32 +112,31 @@ const squadData = [
       { club: 'FC 바르셀로나', years: '2020–현재' },
       { club: 'Club Atlético Rentistas', years: '2018–20' }
     ],
-    awards: ['우루과이 국가대표', 'La Liga 우승 2022–23', 'La Liga 우승 2024–25']
+    awards: ['우루과이 국가대표', 'La Liga 우승 2022–23 / 2024–25']
   },
   {
-    num: 5, posGroup: 'DEF', pos: 'CB',
-    name: '이니고 마르티네스', nat: '🇪🇸 Spain', age: 34,
-    height: '182cm', foot: '왼발', born: '1991.05.17',
-    bio: '노련한 왼발 센터백. 빌드업에서의 정확한 패스와 경험에서 나오는 위치 선정이 탁월하다. 팀의 백업이지만 출장 때마다 안정감을 준다.',
-    stat1: { val: '89%', lbl: '패스 성공률' }, stat2: { val: '백업', lbl: '롤' },
+    num: 24, posGroup: 'DEF', pos: 'CB',
+    name: '에릭 가르시아', nat: '🇪🇸 Spain', age: 25,
+    height: '182cm', foot: '오른발', born: '2001.01.09',
+    bio: '맨시티 유스 출신의 지능형 센터백. 빌드업 능력과 포지셔닝이 뛰어나며 차분한 성격으로 팀의 수비 조직을 안정시킨다. 시장가치 3,000만 €.',
+    stat1: { val: '91%', lbl: '패스 성공률' }, stat2: { val: '25세', lbl: '나이' },
     seasonStats: [
-      { lbl: '출장', val: 18, max: 38 },
-      { lbl: '패스 성공률', val: 89, max: 100 },
-      { lbl: '클린시트 기여', val: 55, max: 100 }
+      { lbl: '출장', val: 20, max: 38 },
+      { lbl: '패스 성공률', val: 91, max: 100 },
+      { lbl: '클리어', val: 65, max: 100 }
     ],
     career: [
-      { club: 'FC 바르셀로나', years: '2023–현재' },
-      { club: 'Athletic Club', years: '2012–23' },
-      { club: 'Real Sociedad B', years: '2010–12' }
+      { club: 'FC 바르셀로나', years: '2021–현재' },
+      { club: 'Manchester City', years: '2017–21' }
     ],
-    awards: ['스페인 국가대표', 'Copa del Rey 우승 2023', 'La Liga 우승 2024–25']
+    awards: ['스페인 국가대표', 'La Liga 우승 2022–23 / 2024–25', '유로 2020 우승']
   },
   {
     num: 3, posGroup: 'DEF', pos: 'LB',
-    name: '알레한드로 발데', nat: '🇪🇸 Spain', age: 21,
+    name: '알레한드로 발데', nat: '🇪🇸 Spain', age: 22,
     height: '170cm', foot: '왼발', born: '2003.10.06',
-    bio: '폭발적인 스피드로 왼쪽 측면을 지배하는 공격형 풀백. 오버래핑과 크로스 정확도가 뛰어나 바르샤의 왼쪽 날개 역할을 하며, 170cm의 작은 체구에도 수비에서도 치열하게 싸운다.',
-    stat1: { val: '6', lbl: '시즌 어시스트' }, stat2: { val: '21세', lbl: '나이' },
+    bio: '폭발적인 스피드로 왼쪽 측면을 지배하는 공격형 풀백. 오버래핑과 크로스 정확도가 뛰어나 바르샤의 왼쪽 날개 역할을 한다. 6,000만 € 시장가치, 계약 2028년까지.',
+    stat1: { val: '6', lbl: '시즌 어시스트' }, stat2: { val: '6,000만 €', lbl: '시장가치' },
     seasonStats: [
       { lbl: '출장', val: 31, max: 38 },
       { lbl: '어시스트', val: 6, max: 15 },
@@ -130,13 +148,30 @@ const squadData = [
     ],
     awards: ['스페인 U21 유로 우승 2023', '스페인 국가대표', 'La Liga 우승 2024–25']
   },
+  {
+    num: 18, posGroup: 'DEF', pos: 'LB',
+    name: '제라르 마르틴', nat: '🇪🇸 Spain', age: 24,
+    height: '180cm', foot: '왼발', born: '2001.09.05',
+    bio: '바르셀로나 아카데미 출신의 왼쪽 풀백. 발데의 백업이지만 출장할 때마다 안정적인 모습을 보여준다. 2,000만 € 시장가치, 계약 2028년까지.',
+    stat1: { val: '백업', lbl: '롤' }, stat2: { val: '24세', lbl: '나이' },
+    seasonStats: [
+      { lbl: '출장', val: 15, max: 38 },
+      { lbl: '어시스트', val: 2, max: 15 },
+      { lbl: '패스 성공률', val: 87, max: 100 }
+    ],
+    career: [
+      { club: 'FC 바르셀로나', years: '2024–현재' },
+      { club: 'FC 바르셀로나 B', years: '2021–24' }
+    ],
+    awards: ['스페인 U23 국가대표', 'La Liga 우승 2024–25']
+  },
   // ── MIDFIELDER ──────────────────────────────
   {
     num: 8, posGroup: 'MID', pos: 'CM',
     name: '페드리', nat: '🇪🇸 Spain', age: 23,
     height: '174cm', foot: '오른발', born: '2002.11.25',
-    bio: '이니에스타의 계보를 잇는 패스 마에스트로. 좁은 공간에서의 압박 해제와 리듬 컨트롤이 팀의 심장부를 이룬다. Golden Boy 2021 수상자이며 가장 창의적인 미드필더 중 하나로 평가받는다.',
-    stat1: { val: '94%', lbl: '패스 성공률' }, stat2: { val: '102', lbl: '경기당 터치' },
+    bio: '이니에스타의 계보를 잇는 패스 마에스트로. Golden Boy 2021 수상자. 좁은 공간에서의 압박 해제와 리듬 컨트롤이 팀의 심장부를 이루며, 1억 4,000만 € 시장가치로 미드필더 중 세계 최고 수준이다.',
+    stat1: { val: '94%', lbl: '패스 성공률' }, stat2: { val: '1.4억 €', lbl: '시장가치' },
     seasonStats: [
       { lbl: '출장', val: 29, max: 38 },
       { lbl: '패스 성공률', val: 94, max: 100 },
@@ -152,10 +187,10 @@ const squadData = [
     num: 6, posGroup: 'MID', pos: 'CM',
     name: '가비', nat: '🇪🇸 Spain', age: 21,
     height: '173cm', foot: '오른발', born: '2004.02.05',
-    bio: '강도 높은 압박과 볼 탈취 능력이 탁월한 투사형 미드필더. 2021–22 시즌 최고의 신인으로 떠올랐으나 무릎 부상으로 긴 공백을 가졌다. 복귀 후 더욱 성숙해진 모습을 보이고 있다.',
-    stat1: { val: '7.2', lbl: '경기당 압박' }, stat2: { val: '21세', lbl: '나이' },
+    bio: '강도 높은 압박과 볼 탈취 능력이 탁월한 투사형 미드필더. 무릎 부상 후 복귀해 더욱 성숙한 모습을 보이고 있다. 계약 2030년까지, 시장가치 4,000만 €.',
+    stat1: { val: '7.2', lbl: '경기당 압박' }, stat2: { val: '4,000만 €', lbl: '시장가치' },
     seasonStats: [
-      { lbl: '출장', val: 22, max: 38 },
+      { lbl: '출장', val: 24, max: 38 },
       { lbl: '볼 탈취', val: 80, max: 100 },
       { lbl: '압박 성공률', val: 68, max: 100 }
     ],
@@ -163,14 +198,14 @@ const squadData = [
       { club: 'FC 바르셀로나', years: '2021–현재' },
       { club: 'FC 바르셀로나 B', years: '2019–21' }
     ],
-    awards: ['Golden Boy 후보', '유로 2024 우승', 'La Liga 우승 2022–23', '스페인 국가대표']
+    awards: ['유로 2024 우승', 'La Liga 우승 2022–23 / 2024–25', '스페인 국가대표']
   },
   {
     num: 21, posGroup: 'MID', pos: 'CM',
     name: '프렝키 데 용', nat: '🇳🇱 Netherlands', age: 28,
     height: '180cm', foot: '오른발', born: '1997.05.12',
-    bio: '광활한 커버리지와 전진 드리블이 무기인 박스투박스 미드필더. 아약스 시절부터 세계 정상급으로 인정받아 온 선수로, 어시스트 능력도 뛰어나 공수 연결고리 역할을 한다.',
-    stat1: { val: '91%', lbl: '패스 성공률' }, stat2: { val: '28세', lbl: '나이' },
+    bio: '광활한 커버리지와 전진 드리블이 무기인 박스투박스 미드필더. 아약스 시절부터 세계 정상급으로 인정받았으며, 4,500만 € 시장가치. 계약 2029년까지.',
+    stat1: { val: '91%', lbl: '패스 성공률' }, stat2: { val: '4,500만 €', lbl: '시장가치' },
     seasonStats: [
       { lbl: '출장', val: 26, max: 38 },
       { lbl: '패스 성공률', val: 91, max: 100 },
@@ -180,16 +215,16 @@ const squadData = [
       { club: 'FC 바르셀로나', years: '2019–현재' },
       { club: 'AFC Ajax', years: '2015–19' }
     ],
-    awards: ['UCL 준우승 2019 (아약스)', '네덜란드 국가대표', 'La Liga 우승 2022–23']
+    awards: ['UCL 준우승 2019 (아약스)', '네덜란드 국가대표', 'La Liga 우승 2022–23 / 2024–25']
   },
   {
-    num: 14, posGroup: 'MID', pos: 'DM',
-    name: '마르크 카사도', nat: '🇪🇸 Spain', age: 21,
+    num: 17, posGroup: 'MID', pos: 'DM',
+    name: '마르크 카사도', nat: '🇪🇸 Spain', age: 22,
     height: '177cm', foot: '오른발', born: '2003.10.02',
-    bio: '2024–25 시즌 팀의 가장 큰 발견. 수비형 미드필드에서 볼 탈취와 빠른 전개로 팀의 새로운 중원 기둥으로 자리잡았다. 어린 나이에도 불구하고 큰 경기에서 흔들리지 않는 정신력을 보여준다.',
-    stat1: { val: '4.8', lbl: '경기당 인터셉트' }, stat2: { val: '21세', lbl: '나이' },
+    bio: '2024–25 시즌 바르셀로나 최고의 발견. 수비형 미드필드에서 볼 탈취와 빠른 전개로 중원 기둥이 됐다. 등번호도 #14에서 #17로 변경, 2,500만 € 시장가치.',
+    stat1: { val: '4.8', lbl: '경기당 인터셉트' }, stat2: { val: '2,500만 €', lbl: '시장가치' },
     seasonStats: [
-      { lbl: '출장', val: 31, max: 38 },
+      { lbl: '출장', val: 33, max: 38 },
       { lbl: '인터셉트', val: 85, max: 100 },
       { lbl: '볼 탈취', val: 82, max: 100 }
     ],
@@ -197,17 +232,34 @@ const squadData = [
       { club: 'FC 바르셀로나', years: '2023–현재' },
       { club: 'FC 바르셀로나 B', years: '2021–23' }
     ],
-    awards: ['스페인 U21 국가대표', 'La Liga 올해의 신인 후보', 'La Liga 우승 2024–25']
+    awards: ['스페인 국가대표', 'La Liga 우승 2024–25', 'La Liga 올해의 신인 후보']
+  },
+  {
+    num: 22, posGroup: 'MID', pos: 'DM',
+    name: '마르크 베르날', nat: '🇪🇸 Spain', age: 18,
+    height: '175cm', foot: '오른발', born: '2006.10.21',
+    bio: '2006년생 바르셀로나 아카데미 출신의 차세대 미드필더. 수비형·중앙 미드필드를 모두 소화한다. 1,000만 € 시장가치, 계약 2029년까지.',
+    stat1: { val: '18세', lbl: '나이' }, stat2: { val: '유망주', lbl: '롤' },
+    seasonStats: [
+      { lbl: '출장', val: 14, max: 38 },
+      { lbl: '패스 성공률', val: 88, max: 100 },
+      { lbl: '볼 탈취', val: 65, max: 100 }
+    ],
+    career: [
+      { club: 'FC 바르셀로나', years: '2024–현재' },
+      { club: 'FC 바르셀로나 B', years: '2022–24' }
+    ],
+    awards: ['스페인 U18 국가대표', '라 마시아 최우수 유망주']
   },
   {
     num: 16, posGroup: 'MID', pos: 'AM',
     name: '페르민 로페스', nat: '🇪🇸 Spain', age: 22,
     height: '178cm', foot: '오른발', born: '2003.03.11',
-    bio: '다재다능한 미드필더로 중앙과 측면을 넘나든다. 골 감각도 뛰어나 교체 투입 시 결정적인 한 방을 자주 터트린다. 올림픽 금메달리스트이기도 하다.',
-    stat1: { val: '8', lbl: '시즌 골' }, stat2: { val: '22세', lbl: '나이' },
+    bio: '다재다능한 미드필더로 중앙과 측면을 넘나든다. 골 감각이 뛰어나 교체 투입 시 결정적인 한 방을 자주 터트린다. 파리 올림픽 금메달리스트. 시장가치 7,000만 €.',
+    stat1: { val: '8', lbl: '시즌 골' }, stat2: { val: '7,000만 €', lbl: '시장가치' },
     seasonStats: [
       { lbl: '출장', val: 28, max: 38 },
-      { lbl: '골', val: 53, max: 100 },
+      { lbl: '공격 포인트', val: 53, max: 100 },
       { lbl: '슈팅 정확도', val: 67, max: 100 }
     ],
     career: [
@@ -220,8 +272,8 @@ const squadData = [
     num: 20, posGroup: 'MID', pos: 'AM',
     name: '다니 올모', nat: '🇪🇸 Spain', age: 27,
     height: '178cm', foot: '오른발', born: '1998.05.07',
-    bio: '유로 2024 우승의 핵심 주역. 스페인 U21 유로와 성인 유로를 모두 제패한 미드필더. 좌·우·중앙 어디서나 위협적이며, 좁은 공간 침투와 마무리 능력이 뛰어나다.',
-    stat1: { val: '12', lbl: '시즌 공격 포인트' }, stat2: { val: '27세', lbl: '나이' },
+    bio: '유로 2024 우승의 핵심 주역. 좌·우·중앙 어디서나 위협적인 기술형 미드필더. 6,000만 € 시장가치, 계약 2030년까지.',
+    stat1: { val: '12', lbl: '시즌 공격 포인트' }, stat2: { val: '6,000만 €', lbl: '시장가치' },
     seasonStats: [
       { lbl: '출장', val: 27, max: 38 },
       { lbl: '공격 포인트', val: 80, max: 100 },
@@ -239,12 +291,12 @@ const squadData = [
     num: 9, posGroup: 'FW', pos: 'ST',
     name: '로베르트 레반도프스키', nat: '🇵🇱 Poland', age: 37,
     height: '185cm', foot: '오른발', born: '1988.08.21',
-    bio: '나이를 무색하게 하는 역대급 득점 기계. 뛰어난 위치 선정과 양발 마무리, 헤딩까지 완벽히 갖춘 스트라이커. 분데스리가와 라리가를 모두 정복하며 역대 최고의 공격수 중 한 명으로 인정받는다.',
-    stat1: { val: '32', lbl: '시즌 골' }, stat2: { val: '9', lbl: '시즌 어시스트' },
+    bio: '역대급 득점 기계. 분데스리가와 라리가를 모두 정복한 스트라이커. 계약 2026년까지로 마지막 시즌이 될 수 있다. 시장가치 900만 €지만 팀 내 영향력은 여전하다.',
+    stat1: { val: '29', lbl: '시즌 골' }, stat2: { val: '계약 2026', lbl: '만료' },
     seasonStats: [
-      { lbl: '출장', val: 34, max: 38 },
-      { lbl: '득점', val: 84, max: 100 },
-      { lbl: '슈팅 정확도', val: 76, max: 100 }
+      { lbl: '출장', val: 32, max: 38 },
+      { lbl: '득점', val: 76, max: 100 },
+      { lbl: '슈팅 정확도', val: 74, max: 100 }
     ],
     career: [
       { club: 'FC 바르셀로나', years: '2022–현재' },
@@ -257,7 +309,7 @@ const squadData = [
     num: 11, posGroup: 'FW', pos: 'LW',
     name: '하피냐', nat: '🇧🇷 Brazil', age: 29,
     height: '176cm', foot: '오른발', born: '1996.12.14',
-    bio: '바르셀로나 현 캡틴. 왼쪽 측면에서 안쪽으로 치고 들어오는 인사이드 포워드 플레이가 특기. 화려한 개인기와 드리블, 그리고 리더십까지 갖춘 팀의 심장이다.',
+    bio: '바르셀로나 현 캡틴. 왼쪽 측면에서 안쪽으로 치고 들어오는 인사이드 포워드 플레이가 특기. 화려한 개인기와 드리블, 리더십까지 갖춘 팀의 심장이다. 시장가치 8,000만 €.',
     stat1: { val: '18', lbl: '시즌 골' }, stat2: { val: '캡틴', lbl: '2024–' },
     seasonStats: [
       { lbl: '출장', val: 35, max: 38 },
@@ -272,13 +324,30 @@ const squadData = [
     awards: ['바르셀로나 캡틴 2024–', 'La Liga 우승 2024–25', '브라질 국가대표']
   },
   {
-    num: 27, posGroup: 'FW', pos: 'RW',
+    num: 14, posGroup: 'FW', pos: 'LW',
+    name: '마르쿠스 래쉬포드', nat: '🇬🇧 England', age: 28,
+    height: '180cm', foot: '오른발', born: '1997.10.31',
+    bio: '맨체스터 유나이티드를 떠나 2025년 바르셀로나에 합류한 잉글랜드 대표팀 공격수. 폭발적인 스피드와 강력한 왼발 슈팅이 무기. 새 환경에서 재기를 노리고 있다. 시장가치 4,000만 €.',
+    stat1: { val: '10', lbl: '시즌 골' }, stat2: { val: '4,000만 €', lbl: '시장가치' },
+    seasonStats: [
+      { lbl: '출장', val: 24, max: 38 },
+      { lbl: '득점', val: 26, max: 100 },
+      { lbl: '드리블 성공', val: 70, max: 100 }
+    ],
+    career: [
+      { club: 'FC 바르셀로나', years: '2025–현재' },
+      { club: 'Manchester United', years: '2015–25' }
+    ],
+    awards: ['잉글랜드 국가대표', 'FA Cup 우승 2016', 'Europa League 우승 2017']
+  },
+  {
+    num: 10, posGroup: 'FW', pos: 'RW',
     name: '라민 야말', nat: '🇪🇸 Spain', age: 18,
     height: '180cm', foot: '왼발', born: '2007.07.13',
-    bio: '2007년생. 축구 역사상 가장 빠르게 성장한 선수 중 하나. 유로 2024 대회 MVP로 스페인 우승을 이끌었다. 폭발적인 드리블과 좌발 인컷 슈팅으로 오른쪽 측면을 완전히 지배한다.',
-    stat1: { val: '유로 MVP', lbl: '2024' }, stat2: { val: '18세', lbl: '나이' },
+    bio: '메시의 10번을 계승한 2007년생 천재. 유로 2024 MVP로 스페인 우승을 이끌었으며, 폭발적인 드리블과 좌발 인컷 슈팅으로 오른쪽 측면을 완전히 지배한다. 시장가치 2억 €로 세계 최고 수준.',
+    stat1: { val: '유로 MVP', lbl: '2024' }, stat2: { val: '2억 €', lbl: '시장가치' },
     seasonStats: [
-      { lbl: '출장', val: 33, max: 38 },
+      { lbl: '출장', val: 35, max: 38 },
       { lbl: '공격 포인트', val: 88, max: 100 },
       { lbl: '드리블 성공', val: 91, max: 100 }
     ],
@@ -286,14 +355,14 @@ const squadData = [
       { club: 'FC 바르셀로나', years: '2023–현재' },
       { club: 'FC 바르셀로나 B', years: '2022–23' }
     ],
-    awards: ['유로 2024 MVP', '유로 2024 우승', 'Golden Boy 후보', 'La Liga 우승 2024–25']
+    awards: ['유로 2024 MVP', '유로 2024 우승', 'Golden Boy 2024', 'La Liga 우승 2024–25', '메시 10번 계승']
   },
   {
     num: 7, posGroup: 'FW', pos: 'FW',
-    name: '페란 토레스', nat: '🇪🇸 Spain', age: 25,
+    name: '페란 토레스', nat: '🇪🇸 Spain', age: 26,
     height: '184cm', foot: '왼발', born: '2000.02.29',
-    bio: '좌·우 측면과 최전방을 모두 소화하는 멀티 공격수. 맨시티 시절 쌓은 경험을 바탕으로 바르셀로나에서 꾸준히 활약하고 있다. 폭발적인 스피드와 결정력이 무기다.',
-    stat1: { val: '10', lbl: '시즌 골' }, stat2: { val: '25세', lbl: '나이' },
+    bio: '좌·우 측면과 최전방을 모두 소화하는 멀티 공격수. 맨시티 시절 쌓은 경험을 바탕으로 꾸준히 활약 중. 시장가치 5,000만 €, 계약 2027년까지.',
+    stat1: { val: '10', lbl: '시즌 골' }, stat2: { val: '5,000만 €', lbl: '시장가치' },
     seasonStats: [
       { lbl: '출장', val: 30, max: 38 },
       { lbl: '득점', val: 26, max: 100 },
@@ -305,6 +374,23 @@ const squadData = [
       { club: 'Valencia CF', years: '2017–21' }
     ],
     awards: ['유로 2024 우승', '스페인 국가대표', 'La Liga 우승 2024–25']
+  },
+  {
+    num: 19, posGroup: 'FW', pos: 'RW',
+    name: '로니 바르지', nat: '🇸🇪 Sweden', age: 20,
+    height: '176cm', foot: '왼발', born: '2005.01.20',
+    bio: '스웨덴/시리아 이중국적의 20세 유망주. FC 코펜하겐에서 발탁된 오른쪽 윙어로, 야말의 백업 역할을 맡는다. 빠른 발과 돌파력이 무기인 차세대 공격수. 시장가치 1,000만 €.',
+    stat1: { val: '유망주', lbl: '롤' }, stat2: { val: '20세', lbl: '나이' },
+    seasonStats: [
+      { lbl: '출장', val: 16, max: 38 },
+      { lbl: '공격 포인트', val: 30, max: 100 },
+      { lbl: '드리블 성공', val: 68, max: 100 }
+    ],
+    career: [
+      { club: 'FC 바르셀로나', years: '2025–현재' },
+      { club: 'FC Copenhagen', years: '2022–25' }
+    ],
+    awards: ['스웨덴 U21 국가대표', '덴마크 슈퍼리가 우승']
   }
 ];
 
@@ -697,58 +783,171 @@ function renderTimeline() {
    ============================ */
 const matchData = [
   {
-    competition: 'UEFA Champions League',
-    date: '2025.03.11',
-    home: 'FC Barcelona',
-    score: '3 — 1',
-    away: 'Benfica',
-    outcome: 'win',
-    review: '전반 야말의 선제골 이후 레반도프스키가 2골 추가. 8강 진출 확정.'
-  },
-  {
-    competition: 'La Liga · R.27',
-    date: '2025.03.08',
-    home: 'Real Madrid',
-    score: '2 — 2',
-    away: 'FC Barcelona',
-    outcome: 'draw',
-    review: '엘 클라시코. 두 번 뒤졌다 두 번 따라잡은 팽팽한 승부.'
-  },
-  {
-    competition: 'La Liga · R.26',
-    date: '2025.03.01',
-    home: 'FC Barcelona',
-    score: '4 — 0',
-    away: 'Sevilla',
-    outcome: 'win',
-    review: '페드리·야말·레반도프스키 활약으로 완승. 라리가 1위 유지.'
-  },
-  {
-    competition: 'Copa del Rey · SF',
-    date: '2025.02.20',
-    home: 'Atlético Madrid',
-    score: '1 — 2',
-    away: 'FC Barcelona',
-    outcome: 'win',
-    review: '원정에서 후반 역전. 결승 진출 확정.'
-  },
-  {
-    competition: 'La Liga · R.24',
-    date: '2025.02.15',
-    home: 'FC Barcelona',
-    score: '1 — 1',
-    away: 'Athletic Club',
-    outcome: 'draw',
-    review: '홈에서 아쉬운 무승부. 후반 동점 실점으로 승점 2 날린 경기.'
-  },
-  {
-    competition: 'La Liga · R.23',
-    date: '2025.02.08',
-    home: 'Girona',
+    competition: 'La Liga · R.38',
+    date: '2025.05.26',
+    home: 'Athletic Bilbao',
     score: '0 — 3',
     away: 'FC Barcelona',
     outcome: 'win',
-    review: '레반도프스키 해트트릭. 시즌 최고의 원정 경기.'
+    review: '시즌 최종전. 야말·하피냐·레반도프스키 1골씩. 완벽한 마무리.'
+  },
+  {
+    competition: 'La Liga · R.37',
+    date: '2025.05.19',
+    home: 'FC Barcelona',
+    score: '2 — 3',
+    away: 'Villarreal',
+    outcome: 'loss',
+    review: '후반 막판 역전을 허용하며 홈에서 충격의 패배. 아쉬운 경기.'
+  },
+  {
+    competition: 'La Liga · R.36',
+    date: '2025.05.16',
+    home: 'Espanyol',
+    score: '0 — 2',
+    away: 'FC Barcelona',
+    outcome: 'win',
+    review: '데르비 카탈라냐. 발데·페르민 골로 더비 완승. 원정팬들 환호.'
+  },
+  {
+    competition: 'La Liga · R.35',
+    date: '2025.05.11',
+    home: 'FC Barcelona',
+    score: '4 — 3',
+    away: 'Real Madrid',
+    outcome: 'win',
+    review: '시즌 최고의 경기. 홈 엘 클라시코 4-3 대승. 야말 2골 포함 팀 전체가 빛났다.'
+  },
+  {
+    competition: 'La Liga · R.34',
+    date: '2025.05.04',
+    home: 'Real Valladolid',
+    score: '1 — 2',
+    away: 'FC Barcelona',
+    outcome: 'win',
+    review: '강등권 팀 원정에서 진땀 승리. 레반도프스키 결승골.'
+  },
+  {
+    competition: 'La Liga · R.32',
+    date: '2025.04.23',
+    home: 'FC Barcelona',
+    score: '1 — 0',
+    away: 'RCD Mallorca',
+    outcome: 'win',
+    review: '페드리의 결승 프리킥으로 1-0 승리. 수비 안정감도 돋보인 경기.'
+  },
+  {
+    competition: 'La Liga · R.31',
+    date: '2025.04.19',
+    home: 'FC Barcelona',
+    score: '4 — 3',
+    away: 'Celta de Vigo',
+    outcome: 'win',
+    review: '7골의 난타전. 후반 역전극으로 승리. 하피냐 멀티골 활약.'
+  },
+  {
+    competition: 'La Liga · R.30',
+    date: '2025.04.13',
+    home: 'CD Leganés',
+    score: '0 — 1',
+    away: 'FC Barcelona',
+    outcome: 'win',
+    review: '단단한 수비와 카사도의 미드필드 지배로 1-0 원정 승리.'
+  },
+  {
+    competition: 'La Liga · R.29',
+    date: '2025.04.06',
+    home: 'FC Barcelona',
+    score: '1 — 1',
+    away: 'Real Betis',
+    outcome: 'draw',
+    review: '후반 동점 허용. 승점 2점을 놓친 아쉬운 홈 무승부.'
+  },
+  {
+    competition: 'La Liga · R.28',
+    date: '2025.03.30',
+    home: 'FC Barcelona',
+    score: '4 — 1',
+    away: 'Girona',
+    outcome: 'win',
+    review: '야말 1골 2어시스트 맹활약. 4-1 완승으로 라리가 선두 굳히기.'
+  }
+];
+
+
+/* ============================
+   뉴스 데이터
+   ============================ */
+const newsData = [
+  {
+    cat: 'transfer',
+    date: '2025.06.15',
+    title: '호안 가르시아, 2,500만 유로에 정식 영입 완료',
+    desc: '에스파뇰 출신의 24세 골키퍼 호안 가르시아가 바르셀로나 새 주전 GK로 낙점됐다. 계약기간은 2031년까지이며, 발롱도르 후보급 퍼포먼스를 기대받고 있다.',
+    source: 'Transfermarkt'
+  },
+  {
+    cat: 'transfer',
+    date: '2025.06.10',
+    title: '마르쿠스 래쉬포드, 맨유에서 임대 합류',
+    desc: '잉글랜드 국가대표 공격수 마르쿠스 래쉬포드가 맨체스터 유나이티드에서 임대 형태로 바르셀로나에 합류했다. 플리크 감독의 강력한 요청으로 성사된 이적이다.',
+    source: 'Transfermarkt'
+  },
+  {
+    cat: 'transfer',
+    date: '2025.06.05',
+    title: '로니 바르지, FC 코펜하겐에서 영입',
+    desc: '스웨덴/시리아 이중국적의 20세 유망주 로니 바르지가 250만 유로에 합류. 라민 야말의 백업 겸 차세대 오른쪽 윙어로 기대를 모으고 있다.',
+    source: 'Transfermarkt'
+  },
+  {
+    cat: 'club',
+    date: '2025.06.01',
+    title: '라민 야말, 메시의 #10 등번호 공식 계승',
+    desc: '2007년생 라민 야말이 다음 시즌부터 FC 바르셀로나의 #10 등번호를 달게 됐다. 리오넬 메시가 바르셀로나를 떠난 뒤 주인을 찾지 못했던 상징적인 번호를 야말이 이어받았다.',
+    source: 'FC Barcelona Official'
+  },
+  {
+    cat: 'match',
+    date: '2025.05.26',
+    title: '시즌 최종전 빌바오 원정 3-0 완승으로 마무리',
+    desc: '2024-25 라리가 최종전에서 애슬레틱 빌바오를 3-0으로 꺾으며 시즌을 마무리했다. 야말·하피냐·레반도프스키가 1골씩 나눠 가졌다.',
+    source: 'La Liga'
+  },
+  {
+    cat: 'match',
+    date: '2025.05.11',
+    title: '홈 엘 클라시코 4-3 대승 — 야말 2골 폭발',
+    desc: '캄 노우에서 펼쳐진 엘 클라시코에서 레알 마드리드를 4-3으로 꺾었다. 야말이 2골을 터트리며 팀의 승리를 이끌었고, 역대 최고의 엘 클라시코 중 하나로 평가받고 있다.',
+    source: 'La Liga'
+  },
+  {
+    cat: 'club',
+    date: '2025.05.01',
+    title: '파우 쿠바르시, 등번호 #5로 변경 — 푸욜 오마주',
+    desc: '바르셀로나의 레전드 카를레스 푸욜이 달았던 #5 등번호를 파우 쿠바르시가 이어받는다. 19세의 나이에 바르샤를 대표하는 번호를 달게 된 쿠바르시의 성장에 팬들의 관심이 집중되고 있다.',
+    source: 'FC Barcelona Official'
+  },
+  {
+    cat: 'club',
+    date: '2025.04.20',
+    title: '라리가 시장가치 업데이트 — 페드리 1.4억 €, 야말 2억 €',
+    desc: '트랜스퍼마켓 최신 업데이트에서 라민 야말의 시장가치가 2억 유로로 확정됐다. 페드리는 1억 4천만 유로로 미드필더 세계 최고 수준을 유지하며 팀의 핵심 자산으로 평가받고 있다.',
+    source: 'Transfermarkt'
+  },
+  {
+    cat: 'transfer',
+    date: '2025.04.10',
+    title: '주앙 칸셀로, 바르셀로나 공식 합류 확정',
+    desc: '포르투갈 국가대표 풀백 주앙 칸셀로가 알힐랄을 거쳐 바르셀로나에 합류했다. 맨시티·유벤투스 시절 최정상급 기량을 발휘했던 칸셀로가 베테랑 옵션으로 합류해 팀의 깊이를 더한다.',
+    source: 'Transfermarkt'
+  },
+  {
+    cat: 'club',
+    date: '2025.03.22',
+    title: '한지 플리크 감독, 2024-25 시즌 성적 평가',
+    desc: '취임 첫 시즌에 공격적이고 역동적인 축구로 라리가 상위권을 유지한 플리크 감독. 야말·쿠바르시 등 젊은 선수들을 키워내며 바르셀로나 재건에 성공적이라는 평가를 받고 있다.',
+    source: 'FC Barcelona Official'
   }
 ];
 
@@ -781,6 +980,44 @@ function renderResults() {
     list.appendChild(row);
   });
 }
+
+
+/* ============================
+   뉴스 렌더링
+   ============================ */
+function renderNews(filter = 'all') {
+  const grid = document.getElementById('newsGrid');
+  grid.innerHTML = '';
+
+  const list = filter === 'all' ? newsData : newsData.filter(n => n.cat === filter);
+  const catLabel = { transfer: '이적', match: '경기', club: '클럽' };
+
+  list.forEach((n, i) => {
+    const card = document.createElement('div');
+    card.className = 'news-card';
+    card.dataset.cat = n.cat;
+    card.style.animationDelay = `${i * 0.06}s`;
+    card.innerHTML = `
+      <div class="news-card-top">
+        <span class="news-badge news-badge--${n.cat}">${catLabel[n.cat]}</span>
+        <span class="news-date">${n.date}</span>
+      </div>
+      <div class="news-title">${n.title}</div>
+      <p class="news-desc">${n.desc}</p>
+      <div class="news-source">출처: ${n.source}</div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+/* 뉴스 필터 버튼 */
+document.querySelectorAll('.news-filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.news-filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderNews(btn.dataset.cat);
+  });
+});
 
 
 /* ============================
@@ -859,4 +1096,5 @@ document.querySelectorAll('.stat-number[data-target]').forEach(el => statObserve
    ============================ */
 renderResults();
 renderSquad();
+renderNews();
 renderTimeline();
