@@ -625,6 +625,218 @@ document.querySelectorAll('.squad-filter-btn').forEach(btn => {
 
 
 /* ============================
+   다음 경기 데이터
+   ============================ */
+const fixturesData = [
+  {
+    competition: 'UCL · R16 2차전', compClass: 'ucl',
+    date: '2026.03.18', time: '02:45',
+    home: 'Newcastle United', away: 'FC Barcelona',
+    isHome: false, venue: 'St. James\' Park'
+  },
+  {
+    competition: 'La Liga · R.29', compClass: 'laliga',
+    date: '2026.03.22', time: '18:00',
+    home: 'FC Barcelona', away: 'Rayo Vallecano',
+    isHome: true, venue: 'Spotify Camp Nou'
+  }
+];
+
+
+/* ============================
+   라리가 순위 데이터 (2024–25 최종)
+   ============================ */
+const standingsData = [
+  { pos:  1, team: 'FC Barcelona',       p: 28, w: 23, d: 1, l: 4,  gf: 77, ga: 28, gd: 49,  pts: 70, isBarca: true },
+  { pos:  2, team: 'Real Madrid',        p: 28, w: 21, d: 3, l: 4,  gf: 60, ga: 24, gd: 36,  pts: 66, isBarca: false },
+  { pos:  3, team: 'Atlético Madrid',    p: 28, w: 17, d: 6, l: 5,  gf: 47, ga: 25, gd: 22,  pts: 57, isBarca: false },
+  { pos:  4, team: 'Villarreal',         p: 28, w: 17, d: 4, l: 7,  gf: 51, ga: 33, gd: 18,  pts: 55, isBarca: false },
+  { pos:  5, team: 'Real Betis',         p: 28, w: 11, d: 11,l: 6,  gf: 43, ga: 35, gd: 8,   pts: 44, isBarca: false },
+  { pos:  6, team: 'Celta de Vigo',      p: 28, w: 10, d: 11,l: 7,  gf: 38, ga: 31, gd: 7,   pts: 41, isBarca: false },
+  { pos:  7, team: 'Real Sociedad',      p: 28, w: 10, d: 8, l: 10, gf: 43, ga: 42, gd: 1,   pts: 38, isBarca: false },
+  { pos:  8, team: 'Espanyol',           p: 28, w: 10, d: 7, l: 11, gf: 35, ga: 42, gd: -7,  pts: 37, isBarca: false },
+  { pos:  9, team: 'Getafe',             p: 28, w: 10, d: 5, l: 13, gf: 23, ga: 30, gd: -7,  pts: 35, isBarca: false },
+  { pos: 10, team: 'Athletic Club',      p: 28, w: 10, d: 5, l: 13, gf: 30, ga: 40, gd: -10, pts: 35, isBarca: false },
+  { pos: 11, team: 'Osasuna',            p: 28, w:  9, d: 7, l: 12, gf: 33, ga: 35, gd: -2,  pts: 34, isBarca: false },
+  { pos: 12, team: 'Girona',             p: 28, w:  8, d: 10,l: 10, gf: 31, ga: 43, gd: -12, pts: 34, isBarca: false },
+  { pos: 13, team: 'Rayo Vallecano',     p: 28, w:  7, d: 11,l: 10, gf: 28, ga: 34, gd: -6,  pts: 32, isBarca: false },
+  { pos: 14, team: 'Valencia',           p: 28, w:  8, d: 8, l: 12, gf: 30, ga: 42, gd: -12, pts: 32, isBarca: false },
+  { pos: 15, team: 'Sevilla',            p: 28, w:  8, d: 7, l: 13, gf: 37, ga: 47, gd: -10, pts: 31, isBarca: false },
+  { pos: 16, team: 'Mallorca',           p: 28, w:  7, d: 7, l: 14, gf: 33, ga: 45, gd: -12, pts: 28, isBarca: false },
+  { pos: 17, team: 'Deportivo Alavés',   p: 28, w:  7, d: 7, l: 14, gf: 26, ga: 38, gd: -12, pts: 28, isBarca: false },
+  { pos: 18, team: 'Elche',              p: 28, w:  5, d: 11,l: 12, gf: 36, ga: 45, gd: -9,  pts: 26, isBarca: false },
+  { pos: 19, team: 'Levante UD',         p: 28, w:  5, d: 8, l: 15, gf: 30, ga: 46, gd: -16, pts: 23, isBarca: false },
+  { pos: 20, team: 'Real Oviedo',        p: 28, w:  4, d: 9, l: 15, gf: 18, ga: 44, gd: -26, pts: 21, isBarca: false }
+];
+
+
+/* ============================
+   하이라이트 데이터
+   ============================ */
+const highlightsData = [
+  {
+    competition: 'La Liga', compClass: 'laliga',
+    title: 'El Clásico 홈 4-3 대승',
+    match: 'FC Barcelona 4-3 Real Madrid',
+    date: '2025.05.11',
+    query: 'FC Barcelona Real Madrid 4-3 La Liga highlights 2025'
+  },
+  {
+    competition: 'UEFA Euro 2024', compClass: 'euro',
+    title: '유로 2024 결승 · 스페인 우승',
+    match: 'Spain 2-1 England',
+    date: '2024.07.14',
+    query: 'Spain England Euro 2024 final highlights Yamal'
+  },
+  {
+    competition: 'La Liga', compClass: 'laliga',
+    title: '데르비 카탈라냐 완승',
+    match: 'Espanyol 0-2 FC Barcelona',
+    date: '2025.05.16',
+    query: 'Barcelona Espanyol derby highlights La Liga 2025'
+  },
+  {
+    competition: 'La Liga', compClass: 'laliga',
+    title: '셀타 비고전 7골 난타전',
+    match: 'FC Barcelona 4-3 Celta de Vigo',
+    date: '2025.04.19',
+    query: 'Barcelona Celta Vigo 4-3 highlights La Liga 2025'
+  },
+  {
+    competition: 'La Liga', compClass: 'laliga',
+    title: '시즌 최종전 빌바오 3-0 완승',
+    match: 'Athletic Bilbao 0-3 FC Barcelona',
+    date: '2025.05.26',
+    query: 'Barcelona Athletic Bilbao 3-0 highlights La Liga 2025'
+  },
+  {
+    competition: 'UEFA Euro 2024', compClass: 'euro',
+    title: '야말 · 유로 2024 베스트 플레이',
+    match: 'Lamine Yamal Euro 2024',
+    date: '2024.07',
+    query: 'Lamine Yamal Euro 2024 best goals skills highlights'
+  }
+];
+
+
+/* ============================
+   다음 경기 렌더링
+   ============================ */
+function renderFixtures() {
+  const list = document.getElementById('fixturesList');
+  list.innerHTML = '';
+
+  fixturesData.forEach((f, i) => {
+    const row = document.createElement('div');
+    row.className = 'fixture-row';
+    row.style.animationDelay = `${i * 0.07}s`;
+
+    const homeClass = f.home === 'FC Barcelona' ? 'fixture-team--barca' : '';
+    const awayClass = f.away === 'FC Barcelona' ? 'fixture-team--barca' : '';
+
+    row.innerHTML = `
+      <div class="fixture-left">
+        <span class="fixture-comp fixture-comp--${f.compClass}">${f.competition}</span>
+        <span class="fixture-date">${f.date} · ${f.time}</span>
+      </div>
+      <div class="fixture-center">
+        <span class="fixture-team ${homeClass}">${f.home}</span>
+        <span class="fixture-vs">VS</span>
+        <span class="fixture-team ${awayClass}">${f.away}</span>
+      </div>
+      <div class="fixture-right">
+        <span class="fixture-venue">📍 ${f.venue}</span>
+        <span class="fixture-homeway ${f.isHome ? 'fixture-home' : 'fixture-away'}">${f.isHome ? '홈' : '원정'}</span>
+      </div>
+    `;
+    list.appendChild(row);
+  });
+}
+
+
+/* ============================
+   라리가 순위 렌더링
+   ============================ */
+function renderStandings() {
+  const wrap = document.getElementById('standingsTable');
+  const rowsHtml = standingsData.map(s => {
+    let rowClass = s.isBarca ? 'standings-barca' : '';
+    if (s.pos <= 4)  rowClass += ' standings-ucl';
+    if (s.pos >= 18) rowClass += ' standings-rel';
+    const gdStr = s.gd > 0 ? '+' + s.gd : s.gd;
+    return `
+    <tr class="${rowClass.trim()}">
+      <td class="standings-pos">${s.pos}</td>
+      <td class="standings-team">${s.isBarca ? '<strong>' + s.team + '</strong>' : s.team}</td>
+      <td>${s.p}</td>
+      <td class="standings-w">${s.w}</td>
+      <td>${s.d}</td>
+      <td>${s.l}</td>
+      <td>${s.gf}</td>
+      <td>${s.ga}</td>
+      <td class="standings-gd">${gdStr}</td>
+      <td class="standings-pts">${s.pts}</td>
+    </tr>`;
+  }).join('');
+
+  wrap.innerHTML = `
+    <table class="standings-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>클럽</th>
+          <th>경기</th>
+          <th class="standings-w">승</th>
+          <th>무</th>
+          <th>패</th>
+          <th>득</th>
+          <th>실</th>
+          <th>득실</th>
+          <th class="standings-pts">승점</th>
+        </tr>
+      </thead>
+      <tbody>${rowsHtml}</tbody>
+    </table>
+    <div class="standings-legend">
+      <span class="legend-ucl">■ UCL 진출권 (1~4위)</span>
+      <span class="legend-rel">■ 강등권 (18~20위)</span>
+    </div>
+    <p class="standings-note">출처: Sofascore · 28라운드 기준</p>
+  `;
+}
+
+
+/* ============================
+   하이라이트 렌더링
+   ============================ */
+function renderHighlights() {
+  const grid = document.getElementById('highlightsGrid');
+  grid.innerHTML = '';
+
+  highlightsData.forEach((h, i) => {
+    const card = document.createElement('div');
+    card.className = 'highlight-card';
+    card.style.animationDelay = `${i * 0.07}s`;
+    card.innerHTML = `
+      <div class="highlight-card-inner">
+        <div class="highlight-play">▶</div>
+        <div class="highlight-info">
+          <span class="highlight-comp highlight-comp--${h.compClass}">${h.competition}</span>
+          <div class="highlight-title">${h.title}</div>
+          <div class="highlight-match">${h.match}</div>
+          <div class="highlight-date">${h.date}</div>
+        </div>
+        <div class="highlight-cta">유튜브에서 보기 →</div>
+      </div>
+    `;
+    const searchUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(h.query)}`;
+    card.addEventListener('click', () => window.open(searchUrl, '_blank', 'noopener,noreferrer'));
+    grid.appendChild(card);
+  });
+}
+
+
+/* ============================
    클럽 역사 데이터
    ============================ */
 const historyData = [
@@ -783,94 +995,58 @@ function renderTimeline() {
    ============================ */
 const matchData = [
   {
-    competition: 'La Liga · R.38',
-    date: '2025.05.26',
-    home: 'Athletic Bilbao',
+    competition: 'La Liga · R.28',
+    date: '2026.03.15',
+    home: 'Sevilla',
+    score: '2 — 5',
+    away: 'FC Barcelona',
+    outcome: 'win',
+    review: '세비야 원정에서 5골 폭발. 압도적인 득점력으로 라리가 선두 굳히기.'
+  },
+  {
+    competition: 'UCL · R16 1차전',
+    date: '2026.03.10',
+    home: 'FC Barcelona',
+    score: '1 — 1',
+    away: 'Newcastle United',
+    outcome: 'draw',
+    review: '홈에서 뉴캐슬과 1-1 무승부. 2차전을 앞두고 승부 예측 불가.'
+  },
+  {
+    competition: 'La Liga · R.27',
+    date: '2026.03.07',
+    home: 'FC Barcelona',
+    score: '1 — 0',
+    away: 'Athletic Bilbao',
+    outcome: 'win',
+    review: '단단한 수비와 결정적인 한 방으로 1-0 승리. 선두 자리 수성.'
+  },
+  {
+    competition: 'Copa del Rey · SF 2차전',
+    date: '2026.03.03',
+    home: 'Atlético Madrid',
     score: '0 — 3',
     away: 'FC Barcelona',
     outcome: 'win',
-    review: '시즌 최종전. 야말·하피냐·레반도프스키 1골씩. 완벽한 마무리.'
+    review: '코파 델 레이 준결승 원정에서 3-0 완승. 결승 진출 확정.'
   },
   {
-    competition: 'La Liga · R.37',
-    date: '2025.05.19',
-    home: 'FC Barcelona',
-    score: '2 — 3',
-    away: 'Villarreal',
-    outcome: 'loss',
-    review: '후반 막판 역전을 허용하며 홈에서 충격의 패배. 아쉬운 경기.'
-  },
-  {
-    competition: 'La Liga · R.36',
-    date: '2025.05.16',
-    home: 'Espanyol',
-    score: '0 — 2',
+    competition: 'La Liga · R.26',
+    date: '2026.02.28',
+    home: 'Villarreal',
+    score: '1 — 4',
     away: 'FC Barcelona',
     outcome: 'win',
-    review: '데르비 카탈라냐. 발데·페르민 골로 더비 완승. 원정팬들 환호.'
+    review: '비야레알 원정 4-1 대승. 야말·레반도프스키 활약으로 완벽한 경기.'
   },
   {
-    competition: 'La Liga · R.35',
-    date: '2025.05.11',
+    competition: 'La Liga · R.25',
+    date: '2026.02.22',
     home: 'FC Barcelona',
-    score: '4 — 3',
-    away: 'Real Madrid',
+    score: '3 — 0',
+    away: 'Levante',
     outcome: 'win',
-    review: '시즌 최고의 경기. 홈 엘 클라시코 4-3 대승. 야말 2골 포함 팀 전체가 빛났다.'
-  },
-  {
-    competition: 'La Liga · R.34',
-    date: '2025.05.04',
-    home: 'Real Valladolid',
-    score: '1 — 2',
-    away: 'FC Barcelona',
-    outcome: 'win',
-    review: '강등권 팀 원정에서 진땀 승리. 레반도프스키 결승골.'
-  },
-  {
-    competition: 'La Liga · R.32',
-    date: '2025.04.23',
-    home: 'FC Barcelona',
-    score: '1 — 0',
-    away: 'RCD Mallorca',
-    outcome: 'win',
-    review: '페드리의 결승 프리킥으로 1-0 승리. 수비 안정감도 돋보인 경기.'
-  },
-  {
-    competition: 'La Liga · R.31',
-    date: '2025.04.19',
-    home: 'FC Barcelona',
-    score: '4 — 3',
-    away: 'Celta de Vigo',
-    outcome: 'win',
-    review: '7골의 난타전. 후반 역전극으로 승리. 하피냐 멀티골 활약.'
-  },
-  {
-    competition: 'La Liga · R.30',
-    date: '2025.04.13',
-    home: 'CD Leganés',
-    score: '0 — 1',
-    away: 'FC Barcelona',
-    outcome: 'win',
-    review: '단단한 수비와 카사도의 미드필드 지배로 1-0 원정 승리.'
-  },
-  {
-    competition: 'La Liga · R.29',
-    date: '2025.04.06',
-    home: 'FC Barcelona',
-    score: '1 — 1',
-    away: 'Real Betis',
-    outcome: 'draw',
-    review: '후반 동점 허용. 승점 2점을 놓친 아쉬운 홈 무승부.'
-  },
-  {
-    competition: 'La Liga · R.28',
-    date: '2025.03.30',
-    home: 'FC Barcelona',
-    score: '4 — 1',
-    away: 'Girona',
-    outcome: 'win',
-    review: '야말 1골 2어시스트 맹활약. 4-1 완승으로 라리가 선두 굳히기.'
+    review: '홈에서 레반테를 3-0으로 제압. 탄탄한 홈 경기력 유지.'
   }
 ];
 
@@ -880,74 +1056,84 @@ const matchData = [
    ============================ */
 const newsData = [
   {
-    cat: 'transfer',
-    date: '2025.06.15',
-    title: '호안 가르시아, 2,500만 유로에 정식 영입 완료',
-    desc: '에스파뇰 출신의 24세 골키퍼 호안 가르시아가 바르셀로나 새 주전 GK로 낙점됐다. 계약기간은 2031년까지이며, 발롱도르 후보급 퍼포먼스를 기대받고 있다.',
-    source: 'Transfermarkt'
-  },
-  {
-    cat: 'transfer',
-    date: '2025.06.10',
-    title: '마르쿠스 래쉬포드, 맨유에서 임대 합류',
-    desc: '잉글랜드 국가대표 공격수 마르쿠스 래쉬포드가 맨체스터 유나이티드에서 임대 형태로 바르셀로나에 합류했다. 플리크 감독의 강력한 요청으로 성사된 이적이다.',
-    source: 'Transfermarkt'
-  },
-  {
-    cat: 'transfer',
-    date: '2025.06.05',
-    title: '로니 바르지, FC 코펜하겐에서 영입',
-    desc: '스웨덴/시리아 이중국적의 20세 유망주 로니 바르지가 250만 유로에 합류. 라민 야말의 백업 겸 차세대 오른쪽 윙어로 기대를 모으고 있다.',
-    source: 'Transfermarkt'
+    cat: 'club',
+    date: '2025.05',
+    title: '바르셀로나, 2024-25 라리가 우승 — 플리크 부임 첫 시즌 제패',
+    desc: '한지 플리크 감독 부임 첫 시즌에 라리가 우승을 차지했다. 야말·하피냐·레반도프스키로 구성된 공격진이 시즌 내내 폭발적인 활약을 펼쳤다.',
+    source: 'La Liga',
+    url: 'https://www.laliga.com/en-GB/news'
   },
   {
     cat: 'club',
-    date: '2025.06.01',
-    title: '라민 야말, 메시의 #10 등번호 공식 계승',
-    desc: '2007년생 라민 야말이 다음 시즌부터 FC 바르셀로나의 #10 등번호를 달게 됐다. 리오넬 메시가 바르셀로나를 떠난 뒤 주인을 찾지 못했던 상징적인 번호를 야말이 이어받았다.',
-    source: 'FC Barcelona Official'
+    date: '2025.01',
+    title: '다니 올모 등록 문제 해결 — 라리가 최종 승인',
+    desc: '라리가가 재정 규정을 이유로 다니 올모의 선수 등록을 거부하는 초유의 사태가 발생했다. 수 주간의 법적 공방 끝에 스페인 스포츠위원회의 개입으로 최종 등록이 승인됐다.',
+    source: 'Marca',
+    url: 'https://www.marca.com'
+  },
+  {
+    cat: 'transfer',
+    date: '2024.10',
+    title: '슈체스니, 은퇴 번복 — 테어 슈테겐 부상 공백 메운다',
+    desc: '유벤투스에서 은퇴를 선언했던 보이치에흐 슈체스니가 테어 슈테겐의 시즌 아웃 부상 소식에 바르셀로나의 요청을 수락하고 깜짝 복귀했다.',
+    source: 'FC Barcelona Official',
+    url: 'https://www.fcbarcelona.com/en/news'
+  },
+  {
+    cat: 'club',
+    date: '2024.10',
+    title: '라민 야말, 골든보이 2024 수상 — 역대 최연소',
+    desc: '17세의 라민 야말이 유럽 최고 유망주에게 주어지는 골든보이 2024를 수상했다. 유로 2024 우승과 바르셀로나에서의 맹활약이 인정받은 결과다.',
+    source: 'Tuttosport',
+    url: 'https://www.tuttosport.com'
+  },
+  {
+    cat: 'club',
+    date: '2024.09',
+    title: '테어 슈테겐, 무릎 인대 파열 — 시즌 아웃',
+    desc: '주전 골키퍼 마르크-안드레 테어 슈테겐이 라리가 경기 중 무릎 인대가 파열되는 중상을 입어 시즌 전체를 결장하게 됐다. 팀에 큰 전력 손실이다.',
+    source: 'FC Barcelona Official',
+    url: 'https://www.fcbarcelona.com/en/news'
   },
   {
     cat: 'match',
-    date: '2025.05.26',
-    title: '시즌 최종전 빌바오 원정 3-0 완승으로 마무리',
-    desc: '2024-25 라리가 최종전에서 애슬레틱 빌바오를 3-0으로 꺾으며 시즌을 마무리했다. 야말·하피냐·레반도프스키가 1골씩 나눠 가졌다.',
-    source: 'La Liga'
-  },
-  {
-    cat: 'match',
-    date: '2025.05.11',
-    title: '홈 엘 클라시코 4-3 대승 — 야말 2골 폭발',
-    desc: '캄 노우에서 펼쳐진 엘 클라시코에서 레알 마드리드를 4-3으로 꺾었다. 야말이 2골을 터트리며 팀의 승리를 이끌었고, 역대 최고의 엘 클라시코 중 하나로 평가받고 있다.',
-    source: 'La Liga'
-  },
-  {
-    cat: 'club',
-    date: '2025.05.01',
-    title: '파우 쿠바르시, 등번호 #5로 변경 — 푸욜 오마주',
-    desc: '바르셀로나의 레전드 카를레스 푸욜이 달았던 #5 등번호를 파우 쿠바르시가 이어받는다. 19세의 나이에 바르샤를 대표하는 번호를 달게 된 쿠바르시의 성장에 팬들의 관심이 집중되고 있다.',
-    source: 'FC Barcelona Official'
-  },
-  {
-    cat: 'club',
-    date: '2025.04.20',
-    title: '라리가 시장가치 업데이트 — 페드리 1.4억 €, 야말 2억 €',
-    desc: '트랜스퍼마켓 최신 업데이트에서 라민 야말의 시장가치가 2억 유로로 확정됐다. 페드리는 1억 4천만 유로로 미드필더 세계 최고 수준을 유지하며 팀의 핵심 자산으로 평가받고 있다.',
-    source: 'Transfermarkt'
+    date: '2024.07',
+    title: '스페인 유로 2024 우승 — 야말·올모의 결승전 활약',
+    desc: '스페인이 유로 2024 결승에서 잉글랜드를 2-1로 꺾고 우승했다. 다니 올모의 어시스트와 미켈 오야르사발의 결승골이 돋보였으며, 야말은 대회 내내 압도적인 퍼포먼스를 선보였다.',
+    source: 'UEFA',
+    url: 'https://www.uefa.com/uefaeuro/'
   },
   {
     cat: 'transfer',
-    date: '2025.04.10',
-    title: '주앙 칸셀로, 바르셀로나 공식 합류 확정',
-    desc: '포르투갈 국가대표 풀백 주앙 칸셀로가 알힐랄을 거쳐 바르셀로나에 합류했다. 맨시티·유벤투스 시절 최정상급 기량을 발휘했던 칸셀로가 베테랑 옵션으로 합류해 팀의 깊이를 더한다.',
-    source: 'Transfermarkt'
+    date: '2024.07',
+    title: '다니 올모, RB 라이프치히에서 영입 — 5,500만 유로',
+    desc: '유로 2024 우승 주역 다니 올모가 5,500만 유로에 바르셀로나에 합류했다. 공격형 미드필더로 측면과 중앙 어디서나 위협적인 플레이가 기대된다.',
+    source: 'Transfermarkt',
+    url: 'https://www.transfermarkt.com'
   },
   {
     cat: 'club',
-    date: '2025.03.22',
-    title: '한지 플리크 감독, 2024-25 시즌 성적 평가',
-    desc: '취임 첫 시즌에 공격적이고 역동적인 축구로 라리가 상위권을 유지한 플리크 감독. 야말·쿠바르시 등 젊은 선수들을 키워내며 바르셀로나 재건에 성공적이라는 평가를 받고 있다.',
-    source: 'FC Barcelona Official'
+    date: '2024.06',
+    title: '한지 플리크, 신임 감독 공식 선임 — 샤비의 뒤를 잇다',
+    desc: '샤비 에르난데스 감독의 계약 해지 후 전 바이에른 뮌헨 감독 한지 플리크가 바르셀로나의 새 사령탑으로 공식 선임됐다. 계약 기간은 2026년까지.',
+    source: 'FC Barcelona Official',
+    url: 'https://www.fcbarcelona.com/en/news'
+  },
+  {
+    cat: 'club',
+    date: '2024.06',
+    title: '하피냐, 2024-25 시즌 캡틴 선임',
+    desc: '브라질 국적의 하피냐가 FC 바르셀로나의 새 주장으로 선임됐다. 리더십과 팀 헌신도를 높이 평가한 플리크 감독의 선택이다.',
+    source: 'FC Barcelona Official',
+    url: 'https://www.fcbarcelona.com/en/news'
+  },
+  {
+    cat: 'club',
+    date: '2023.06',
+    title: '라민 야말, 1군 정식 데뷔 — 역대 최연소 라리가 출전',
+    desc: '2007년생 라민 야말이 16세의 나이로 라리가 경기에 출전, 클럽 역대 최연소 출전 기록을 세웠다. 드리블과 순간 가속력으로 데뷔전부터 강렬한 인상을 남겼다.',
+    source: 'FC Barcelona Official',
+    url: 'https://www.fcbarcelona.com/en/news'
   }
 ];
 
@@ -994,7 +1180,7 @@ function renderNews(filter = 'all') {
 
   list.forEach((n, i) => {
     const card = document.createElement('div');
-    card.className = 'news-card';
+    card.className = 'news-card news-card--clickable';
     card.dataset.cat = n.cat;
     card.style.animationDelay = `${i * 0.06}s`;
     card.innerHTML = `
@@ -1004,11 +1190,29 @@ function renderNews(filter = 'all') {
       </div>
       <div class="news-title">${n.title}</div>
       <p class="news-desc">${n.desc}</p>
-      <div class="news-source">출처: ${n.source}</div>
+      <div class="news-footer">
+        <span class="news-source">출처: ${n.source}</span>
+        <span class="news-read-more">기사 보기 →</span>
+      </div>
     `;
+    const searchUrl = `https://www.google.com/search?q=${encodeURIComponent('FC Barcelona ' + n.title)}`;
+    card.addEventListener('click', () => {
+      window.open(searchUrl, '_blank', 'noopener,noreferrer');
+    });
     grid.appendChild(card);
   });
 }
+
+/* 경기 탭 전환 */
+document.querySelectorAll('.results-tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.results-tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const tab = btn.dataset.tab;
+    document.getElementById('resultsList').style.display  = tab === 'results'  ? '' : 'none';
+    document.getElementById('fixturesList').style.display = tab === 'fixtures' ? '' : 'none';
+  });
+});
 
 /* 뉴스 필터 버튼 */
 document.querySelectorAll('.news-filter-btn').forEach(btn => {
@@ -1095,6 +1299,9 @@ document.querySelectorAll('.stat-number[data-target]').forEach(el => statObserve
    초기 렌더
    ============================ */
 renderResults();
+renderFixtures();
+renderStandings();
 renderSquad();
 renderNews();
+renderHighlights();
 renderTimeline();

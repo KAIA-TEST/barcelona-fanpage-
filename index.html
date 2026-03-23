@@ -20,7 +20,9 @@
       </button>
       <ul class="nav-links" id="navLinks">
         <li><a href="#squad">스쿼드</a></li>
-        <li><a href="#results">경기 결과</a></li>
+        <li><a href="#results">경기</a></li>
+        <li><a href="#standings">순위</a></li>
+        <li><a href="#highlights">하이라이트</a></li>
         <li><a href="#news">뉴스</a></li>
         <li><a href="#history">역사</a></li>
         <li><a href="#stats">클럽 기록</a></li>
@@ -117,18 +119,32 @@
     </div>
   </section>
 
-  <!-- ===== RESULTS ===== -->
+  <!-- ===== RESULTS & FIXTURES ===== -->
   <section class="section results" id="results">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">RECENT MATCHES</span>
-        <h2 class="section-title">최근 경기</h2>
-        <p class="section-desc">2024–25 시즌 주요 경기 결과</p>
+        <span class="section-tag">2025–26 SEASON</span>
+        <h2 class="section-title">경기</h2>
+        <p class="section-desc">최근 결과와 예정 경기를 확인하세요</p>
       </div>
+      <div class="results-tabs">
+        <button class="results-tab-btn active" data-tab="results">최근 결과</button>
+        <button class="results-tab-btn" data-tab="fixtures">예정 경기</button>
+      </div>
+      <div id="resultsList"></div>
+      <div id="fixturesList" style="display:none"></div>
+    </div>
+  </section>
 
-      <div class="results-list" id="resultsList">
-        <!-- script.js에서 렌더링 -->
+  <!-- ===== STANDINGS ===== -->
+  <section class="section standings-section" id="standings">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">LA LIGA 2025–26</span>
+        <h2 class="section-title">라리가 순위</h2>
+        <p class="section-desc">2025–26 시즌 현재 순위 (28라운드 기준)</p>
       </div>
+      <div class="standings-wrap" id="standingsTable"></div>
     </div>
   </section>
 
@@ -149,6 +165,18 @@
       <div class="news-grid" id="newsGrid">
         <!-- script.js에서 렌더링 -->
       </div>
+    </div>
+  </section>
+
+  <!-- ===== HIGHLIGHTS ===== -->
+  <section class="section highlights-section" id="highlights">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">MATCH HIGHLIGHTS</span>
+        <h2 class="section-title">경기 하이라이트</h2>
+        <p class="section-desc">클릭하면 유튜브에서 하이라이트 영상을 찾아볼 수 있어요</p>
+      </div>
+      <div class="highlights-grid" id="highlightsGrid"></div>
     </div>
   </section>
 
